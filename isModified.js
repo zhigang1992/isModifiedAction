@@ -2,7 +2,7 @@ const process = require('process');
 const fs = require('fs');
 
 
-const inputs = process.argv[3].split(' ')
+const inputs = process.argv[2].split(' ')
 
 console.log(`input is: ${inputs}`)
 
