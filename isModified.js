@@ -10,10 +10,12 @@ const events = JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, {
     encoding: 'utf-8'
 }))
 
+console.log('Modifications are:\n')
 for (const commit of events.commits) {
     const modifications = commit.added
         .concat(commit.removed)
         .concat(commit.modified)
+    console.log(JSON.stringify(modifications, null, 2))
     for (const mod of modifications) {
         for (const input of inputs) {
             if (mod.startsWith(input)) {
